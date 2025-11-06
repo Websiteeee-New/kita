@@ -51,8 +51,10 @@ style.innerHTML = `
 }`;
 document.head.appendChild(style);
 
-// Audio element
-const audio = document.querySelector('audio');
+// Musik
+const musik = document.getElementById('musik');
+document.body.addEventListener('click', () => musik.play());
+
 
 // Ambil semua logo IG
 const igLogos = document.querySelectorAll('.ig-logo svg');
@@ -88,28 +90,3 @@ function animateLogo() {
   });
 }
 
-// Mulai animasi saat audio diputar
-audio.onplay = () => {
-  if (audioCtx.state === 'suspended') {
-    audioCtx.resume();
-  }
-  animateLogo();
-};
-
-    const player = document.getElementById('musikPlayer');
-    const btn1   = document.getElementById('btnSong1');
-    const btn2   = document.getElementById('btnSong2');
-
-    btn1.addEventListener('click', () => {
-      player.src = 'p1.mp3';    // ganti dengan path lagu 1
-      player.play();
-    });
-
-    btn2.addEventListener('click', () => {
-      player.src = 'p2.mp3';    // ganti dengan path lagu 2
-      player.play();
-    });
-
-    // Agar loop jika mau
-    player.loop = true;
-  
